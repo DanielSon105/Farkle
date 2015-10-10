@@ -13,6 +13,7 @@
 		E02622FA1BC7059700F51766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02622F81BC7059700F51766 /* Main.storyboard */; };
 		E02622FC1BC7059700F51766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02622FB1BC7059700F51766 /* Assets.xcassets */; };
 		E02622FF1BC7059700F51766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02622FD1BC7059700F51766 /* LaunchScreen.storyboard */; };
+		E02623081BC7111800F51766 /* DieLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E02623071BC7111800F51766 /* DieLabel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E02622FB1BC7059700F51766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E02622FE1BC7059700F51766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E02623001BC7059700F51766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E02623061BC7111800F51766 /* DieLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DieLabel.h; sourceTree = "<group>"; };
+		E02623071BC7111800F51766 /* DieLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DieLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				E02622F51BC7059700F51766 /* ViewController.h */,
 				E02622F61BC7059700F51766 /* ViewController.m */,
 				E02622F81BC7059700F51766 /* Main.storyboard */,
+				E02623061BC7111800F51766 /* DieLabel.h */,
+				E02623071BC7111800F51766 /* DieLabel.m */,
 				E02622FB1BC7059700F51766 /* Assets.xcassets */,
 				E02622FD1BC7059700F51766 /* LaunchScreen.storyboard */,
 				E02623001BC7059700F51766 /* Info.plist */,
@@ -152,6 +157,7 @@
 				E02622F71BC7059700F51766 /* ViewController.m in Sources */,
 				E02622F41BC7059700F51766 /* AppDelegate.m in Sources */,
 				E02622F11BC7059700F51766 /* main.m in Sources */,
+				E02623081BC7111800F51766 /* DieLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
