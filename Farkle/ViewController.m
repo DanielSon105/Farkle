@@ -14,6 +14,8 @@
 @property UITapGestureRecognizer *tapGestureRecognizer;
 @property NSMutableArray *dieLabels;
 
+@property BOOL *canRoll;
+
 @property (weak, nonatomic) IBOutlet DieLabel *dieA;
 @property (weak, nonatomic) IBOutlet DieLabel *dieB;
 @property (weak, nonatomic) IBOutlet DieLabel *dieC;
@@ -36,14 +38,23 @@
 
     self.dieLabels = [NSMutableArray arrayWithObjects: self.dieA, self.dieB, self.dieC, self.dieD, self.dieE, self.dieF, nil];
     for (DieLabel *dieLabel in self.dieLabels) {
+        dieLabel.backgroundColor = [UIColor greenColor];
         dieLabel.delegate = self;
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)onRollButtonPressed:(UIButton *)sender {
+    self.dice = [NSMutableArray new];
+    NSMutableArray *diceArray = self.dice;
+
     for (DieLabel *dieLabel in self.dieLabels) {
         NSLog (@"Die has a label of %@", dieLabel.text); 
         [dieLabel roll:sender]; //as a user I want to roll all the dice
+
+         //[diceArray addObject:[dieLabel.dieNumber];  WHERE CORY LEFT OFF
+        if (self.canRoll == NO){
+        }
+
         }
 
 }

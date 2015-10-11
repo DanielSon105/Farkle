@@ -12,9 +12,17 @@
 
 - (void)diceSelected:(UITapGestureRecognizer *)sender {
     NSLog(@"%@",self.text);
-    if (self.doesDieQualifyForScoring == YES) {
-        self.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
-        //code 
+    //    if (self.doesDieQualifyForScoring == YES) {
+    //        self.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
+    if (self.isDieHeld == NO) {
+        self.backgroundColor = [UIColor blueColor];
+
+        self.isDieHeld = YES;
+    } else if (self.isDieHeld == YES){
+        self.backgroundColor = [UIColor greenColor];
+        self.isDieHeld = NO;
+    } else{
+        self.isDieHeld = NO;
     }
 
 }

@@ -21,6 +21,7 @@
 @property (nonatomic,assign)id<DieLabelDelegate>delegate; //declared a property of type 'id' that specified the protocol
 @property BOOL doesDieQualifyForScoring;
 @property BOOL isDieHeld;
+@property NSNumber *dieNumber;
 
 - (void)diceSelected:(UITapGestureRecognizer *)sender; //declared a method in our protocol GUESS
 
