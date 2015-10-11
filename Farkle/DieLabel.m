@@ -11,18 +11,27 @@
 @implementation DieLabel
 
 - (void)diceSelected:(UITapGestureRecognizer *)sender {
-    NSLog(@"%@",self.text);
-    //    if (self.doesDieQualifyForScoring == YES) {
-    //        self.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
-    if (self.isDieHeld == NO) {
-        self.backgroundColor = [UIColor blueColor];
+    NSLog(@"%@ has been selected",self.text);
+//    if (self.doesDieQualifyForScoring == YES) {
+//        self.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
+        if (self.isDieHeld == NO) {
+            self.backgroundColor = [UIColor blueColor];
+            self.dieNumber = [NSNumber numberWithInteger:[self.text integerValue]];
+//            NSLog(@"%@", self.dieNumber);
+            [self.dice addObject:self.dieNumber];
 
-        self.isDieHeld = YES;
-    } else if (self.isDieHeld == YES){
-        self.backgroundColor = [UIColor greenColor];
-        self.isDieHeld = NO;
-    } else{
-        self.isDieHeld = NO;
+            NSLog(@"%@ was added to the dice array", [[self.dice objectAtIndex:0] stringValue]);
+            self.isDieHeld = YES;
+        } else if (self.isDieHeld == YES){
+            self.backgroundColor = [UIColor greenColor];
+            self.dieNumber = [NSNumber numberWithInteger:[self.text integerValue]];
+            [self.dice removeObject:self.dieNumber];
+            self.isDieHeld = NO;
+        } else{
+            self.isDieHeld = NO;
+}
+    for (NSNumber *number in self.dice) {
+        NSLog(@"%@ is part of the dice array", number);
     }
 
 }
@@ -32,13 +41,17 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diceSelected:)];
     [self addGestureRecognizer:tapGesture];
     [self.delegate tappedLabel:self didTapDieLabel:tapGesture];
+    self.dice = [NSMutableArray new];
         //add code here
     return self;
 }
 
 -(void)roll:(id)sender{
     if (self.isDieHeld == NO) {//self.isDieHeld == YES when
-        self.text = [NSString stringWithFormat:@"%lu",(unsigned long)arc4random_uniform(6) + 1]; //NSUInteger randomDiceNumber = arc4random_uniform(6) + 1;
+        self.text = [NSString stringWithFormat:@"%lu",(unsigned long)arc4random_uniform(6) + 1];//NSUInteger randomDiceNumber = arc4random_uniform(6) + 1;
+        if ([self.text  isEqual: @"6"]) {
+            self.text = @"⚅";
+        }
     } else {
         //
     }

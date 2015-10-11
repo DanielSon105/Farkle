@@ -22,6 +22,8 @@
 @property BOOL doesDieQualifyForScoring;
 @property BOOL isDieHeld;
 @property NSNumber *dieNumber;
+@property NSMutableArray *dice; //Add a NSMutableArray property to your ViewController called “dice”
+
 
 - (void)diceSelected:(UITapGestureRecognizer *)sender; //declared a method in our protocol GUESS
 

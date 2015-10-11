@@ -11,10 +11,7 @@
 
 @interface ViewController () <DieLabelDelegate>
 //@property CGPoint tappedPoint;
-@property UITapGestureRecognizer *tapGestureRecognizer;
-@property NSMutableArray *dieLabels;
 
-@property BOOL *canRoll;
 
 @property (weak, nonatomic) IBOutlet DieLabel *dieA;
 @property (weak, nonatomic) IBOutlet DieLabel *dieB;
@@ -23,7 +20,11 @@
 @property (weak, nonatomic) IBOutlet DieLabel *dieE;
 @property (weak, nonatomic) IBOutlet DieLabel *dieF;
 
-@property NSMutableArray *dice; //Add a NSMutableArray property to your ViewController called “dice”
+@property NSMutableArray *dieLabels;
+
+@property BOOL canRoll;
+
+@property UITapGestureRecognizer *tapGestureRecognizer;
 
 @property int intRollOnTurn; //An integer between 1 and 6 since the maximum possible number of rolls in a turn is six
 @property UIColor *heldDieColor;
@@ -41,28 +42,28 @@
         dieLabel.backgroundColor = [UIColor greenColor];
         dieLabel.delegate = self;
     }
+
+//    return @[@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)onRollButtonPressed:(UIButton *)sender {
-    self.dice = [NSMutableArray new];
-    NSMutableArray *diceArray = self.dice;
 
+
+- (IBAction)onRollButtonPressed:(UIButton *)sender {
+//    self.dice = [NSMutableArray new];
+//    NSMutableArray *diceArray = self.dice;
     for (DieLabel *dieLabel in self.dieLabels) {
-        NSLog (@"Die has a label of %@", dieLabel.text); 
+        NSLog (@"Die has a label of %@ at the point of rolling", dieLabel.text);
         [dieLabel roll:sender]; //as a user I want to roll all the dice
 
-         //[diceArray addObject:[dieLabel.dieNumber];  WHERE CORY LEFT OFF
         if (self.canRoll == NO){
         }
-
         }
-
 }
 -(void)tappedLabel:(id)tappedLabel didTapDieLabel:(id)dieLabel {
     for (DieLabel *dieLabel in self.dieLabels) {
         NSLog (@"Die has a label of %@ and was tapped", dieLabel.text);
+               //add the selected dice to the dice array
     }
-    
 }
 
 -(void)diceSelected:(UITapGestureRecognizer *)sender {
