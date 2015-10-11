@@ -20,12 +20,12 @@
 //            NSLog(@"%@", self.dieNumber);
             [self.dice addObject:self.dieNumber];
 
-            NSLog(@"%@ was added to the dice array", [[self.dice objectAtIndex:0] stringValue]);
+            NSLog(@"%@ was added to the dice array", self.dice);
             self.isDieHeld = YES;
         } else if (self.isDieHeld == YES){
             self.backgroundColor = [UIColor greenColor];
             self.dieNumber = [NSNumber numberWithInteger:[self.text integerValue]];
-            [self.dice removeObject:self.dieNumber];
+//            [self.dice removeObject:self.dieNumber];
             self.isDieHeld = NO;
         } else{
             self.isDieHeld = NO;
@@ -41,7 +41,6 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diceSelected:)];
     [self addGestureRecognizer:tapGesture];
     [self.delegate tappedLabel:self didTapDieLabel:tapGesture];
-    self.dice = [NSMutableArray new];
         //add code here
     return self;
 }
@@ -57,6 +56,19 @@
     }
 
 }
+
+ - (id)init
+ {
+     self = [super init];
+     if (self) {
+         self.dice = [[NSMutableArray alloc] init];
+     }
+     return self;
+ }
+
+ - (void) addItem:(NSNumber *)dieNumber{
+     [self.dice addObject:dieNumber];
+ }
 
 //-(void)tappedLabel:(id)tappedLabel didTapDieLabel:(DieLabel *)dieLabel{
 //    NSLog(@"didTapDieLabel method called");

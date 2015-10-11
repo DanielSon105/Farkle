@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet DieLabel *dieF;
 
 @property NSMutableArray *dieLabels;
+@property NSMutableArray *dice;
 
 @property BOOL canRoll;
 
@@ -42,11 +43,12 @@
         dieLabel.backgroundColor = [UIColor greenColor];
         dieLabel.delegate = self;
     }
+    self.dice =[[NSMutableArray alloc] init];
+    
 
 //    return @[@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 - (IBAction)onRollButtonPressed:(UIButton *)sender {
 //    self.dice = [NSMutableArray new];
@@ -68,7 +70,10 @@
 
 -(void)diceSelected:(UITapGestureRecognizer *)sender {
     NSLog(@"PlaceHolder for diceSelected method in main view controller");
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
