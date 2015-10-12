@@ -43,11 +43,15 @@
         dieLabel.backgroundColor = [UIColor greenColor];
         dieLabel.delegate = self;
     }
-    self.dice =[[NSMutableArray alloc] init];
+    self.dice = [NSMutableArray new];
     
 
 //    return @[@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    self.dice =[[NSMutableArray alloc] init];
 }
 
 - (IBAction)onRollButtonPressed:(UIButton *)sender {
@@ -61,11 +65,11 @@
         }
         }
 }
--(void)tappedLabel:(id)tappedLabel didTapDieLabel:(id)dieLabel {
-    for (DieLabel *dieLabel in self.dieLabels) {
-        NSLog (@"Die has a label of %@ and was tapped", dieLabel.text);
+
+-(void)tappedLabel:(DieLabel *)tappedLabel {
+
+        NSLog (@"Die has a label of %@ and was tapped", self.dice);
                //add the selected dice to the dice array
-    }
 }
 
 -(void)diceSelected:(UITapGestureRecognizer *)sender {
@@ -78,6 +82,94 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark DieLabelDelegate Method
+
+-(void)dieLabel:(DieLabel *)dieLabel {
+
+    NSLog(@"Testing 123");
+
+//    if (![self.dice containsObject:dieLabel]) {
+//        self.currentRoundSelectedDice++;
+//        dieLabel.isTapped = YES;
+//        [dieLabel displayNumber:dieLabel.value];
+//        self.gatherDiceLabel.userInteractionEnabled = YES;
+//        [self.dice addObject:dieLabel];
+//        switch (dieLabel.value) {
+//            case 1:
+//                [self addOneDieScore];
+//                dieLabel.hasScored = YES;
+//                break;
+//            case 2:
+//                [self addTwoDieScore];
+//                break;
+//            case 3:
+//                [self addThreeDieScore];
+//                break;
+//            case 4:
+//                [self addFourDieScore];
+//                break;
+//            case 5:
+//                [self addFiveDieScore];
+//                dieLabel.hasScored = YES;
+//                break;
+//            case 6:
+//                [self addSixDieScore];
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//    else if ([self.dice containsObject:dieLabel]) {
+//        self.currentRoundSelectedDice--;
+//        [self.dice removeObject:dieLabel];
+//        dieLabel.isTapped = NO;
+//        [dieLabel displayNumber:dieLabel.value];
+//        if (self.currentRoundSelectedDice == 0) {
+//            self.gatherDiceLabel.userInteractionEnabled = NO;
+//        }
+//        switch (dieLabel.value) {
+//            case 1:
+//                [self subOneDieScore];
+//                dieLabel.hasScored = NO;
+//                break;
+//            case 2:
+//                [self subTwoDieScore];
+//                break;
+//            case 3:
+//                [self subThreeDieScore];
+//                break;
+//            case 4:
+//                [self subFourDieScore];
+//                break;
+//            case 5:
+//                [self subFiveDieScore];
+//                dieLabel.hasScored = NO;
+//                break;
+//            case 6:
+//                [self subSixDieScore];
+//                break;
+//            default:
+//                break;
+//        }
+//
+//    }
+//
+//    if (self.dice.count == 6) {
+//        BOOL hotDice = [self checkHotDice];
+//        if (hotDice) {
+//            [self hotDiceRoll];
+//        }
+//    }
+//
+//    if (self.currentRoundSelectedDice > 0 && self.score > 0) {
+//        self.bankButton.enabled = YES;
+//    }
+//    else {
+//        self.bankButton.enabled = NO;
+//    }
 }
 
 @end

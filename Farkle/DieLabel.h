@@ -8,28 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@class DieLabel;
+
 @protocol DieLabelDelegate <NSObject> //defined a protocol in header
 
 
-
--(void)tappedLabel:(id)tappedLabel didTapDieLabel:(UITapGestureRecognizer *)sender; //declared a method in our protocol GUESS
+-(void)dieLabel:(DieLabel *)dieLabel;
+//declared a method in our protocol
 
 @end
 
 @interface DieLabel : UILabel
 
-@property (nonatomic,assign)id<DieLabelDelegate>delegate; //declared a property of type 'id' that specified the protocol
+@property (weak, nonatomic)id<DieLabelDelegate>delegate; //declared a property of type 'id' that specified the protocol
 @property BOOL doesDieQualifyForScoring;
 @property BOOL isDieHeld;
 @property NSNumber *dieNumber;
-@property NSMutableArray *dice; //Add a NSMutableArray property to your ViewController called “dice”
-
-
-- (void)diceSelected:(UITapGestureRecognizer *)sender; //declared a method in our protocol GUESS
 
 - (void)roll:(id)sender;
-
-//declared a method in our protocol
 
 
 @end
