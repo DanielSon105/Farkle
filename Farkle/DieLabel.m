@@ -13,31 +13,6 @@
 - (void)diceSelected:(UITapGestureRecognizer *)sender {
     NSLog(@"%@ has been selected",self.text);
     [self.delegate dieLabel:self];
-    //    if (self.doesDieQualifyForScoring == YES) {
-    //        self.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
-//    if (self.isDieHeld == NO) {
-//        self.backgroundColor = [UIColor blueColor];
-//        self.dieNumber = [NSNumber numberWithInteger:[self.text integerValue]];
-//        NSLog(@"%@", self.dieNumber);
-//        [self.dice addObject:self.dieNumber];
-//
-//        NSLog(@"%@ was added to the dice array", self.dice);
-//        self.isDieHeld = YES;
-////        for (NSNumber *number in self.dice) {
-////            NSLog(@"%@ is part of the dice array", number);
-////        }
-//    } else if (self.isDieHeld == YES){
-//        self.backgroundColor = [UIColor greenColor];
-//        self.dieNumber = [NSNumber numberWithInteger:[self.text integerValue]];
-//        [self.dice removeObject:self.dieNumber];
-//        self.isDieHeld = NO;
-//        for (NSNumber *number in self.dice) {
-//            NSLog(@"%@ is part of the dice array", number);
-//        }
-//    } else{
-//        self.isDieHeld = NO;
-//    }
-
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder {

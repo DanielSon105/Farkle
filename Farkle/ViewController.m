@@ -42,6 +42,7 @@
     for (DieLabel *dieLabel in self.dieLabels) {
         dieLabel.backgroundColor = [UIColor greenColor];
         dieLabel.delegate = self;
+        dieLabel.doesDieQualifyForScoring = YES;
     }
     self.dice = [NSMutableArray new];
     
@@ -90,6 +91,32 @@
 -(void)dieLabel:(DieLabel *)dieLabel {
 
     NSLog(@"Testing 123");
+
+        if (dieLabel.doesDieQualifyForScoring == YES) {
+            dieLabel.backgroundColor = [UIColor darkGrayColor]; // UI Elements shouldn't be here so should probably change to a variable and set in view controller
+        if (dieLabel.isDieHeld == NO) {
+            dieLabel.backgroundColor = [UIColor blueColor];
+            dieLabel.dieNumber = [NSNumber numberWithInteger:[dieLabel.text integerValue]];
+            NSLog(@"%@", dieLabel.dieNumber);
+            [self.dice addObject:dieLabel.dieNumber];
+    
+            NSLog(@"%@ was added to the dice array", self.dice);
+            dieLabel.isDieHeld = YES;
+            for (NSNumber *number in self.dice) {
+                NSLog(@"%@ is part of the dice array", number);
+            }
+        } else if (dieLabel.isDieHeld == YES){
+            dieLabel.backgroundColor = [UIColor greenColor];
+            dieLabel.dieNumber = [NSNumber numberWithInteger:[dieLabel.text integerValue]];
+            [self.dice removeObject:dieLabel.dieNumber];
+            dieLabel.isDieHeld = NO;
+            for (NSNumber *number in self.dice) {
+                NSLog(@"%@ is part of the dice array", number);
+            }
+        } else{
+            dieLabel.isDieHeld = NO;
+        }
+
 
 //    if (![self.dice containsObject:dieLabel]) {
 //        self.currentRoundSelectedDice++;
@@ -170,6 +197,7 @@
 //    else {
 //        self.bankButton.enabled = NO;
 //    }
+}
 }
 
 @end
