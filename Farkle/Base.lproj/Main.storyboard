@@ -77,10 +77,20 @@
                                     <action selector="onRollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ohj-Cp-HnR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uER-IN-ax7">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="394" width="160" height="21"/>
+                                </variation>
+                            </label>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXM-lo-b9k" customClass="DieLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -97,6 +107,7 @@
                                 <exclude reference="7Zi-eL-3aG"/>
                                 <exclude reference="iZO-B4-FDu"/>
                                 <exclude reference="DBb-Hk-Xlm"/>
+                                <exclude reference="uER-IN-ax7"/>
                                 <exclude reference="UXM-lo-b9k"/>
                             </mask>
                         </variation>
@@ -108,6 +119,7 @@
                                 <include reference="7Zi-eL-3aG"/>
                                 <include reference="iZO-B4-FDu"/>
                                 <include reference="DBb-Hk-Xlm"/>
+                                <include reference="uER-IN-ax7"/>
                                 <include reference="UXM-lo-b9k"/>
                             </mask>
                         </variation>
@@ -120,6 +132,8 @@
                         <outlet property="dieD" destination="f1W-96-Uhw" id="aCe-kG-zwB"/>
                         <outlet property="dieE" destination="7Zi-eL-3aG" id="58c-8A-5ot"/>
                         <outlet property="dieF" destination="UXM-lo-b9k" id="OKQ-HN-cFj"/>
+                        <outlet property="rollButton" destination="DBb-Hk-Xlm" id="xcr-fe-haa"/>
+                        <outlet property="userScore" destination="uER-IN-ax7" id="POs-hu-8vN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

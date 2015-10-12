@@ -23,6 +23,7 @@
 @property (weak, nonatomic)id<DieLabelDelegate>delegate; //declared a property of type 'id' that specified the protocol
 @property BOOL doesDieQualifyForScoring;
 @property BOOL isDieHeld;
+@property BOOL isDieBankReady;
 @property NSNumber *dieNumber;
 
 - (void)roll:(id)sender;

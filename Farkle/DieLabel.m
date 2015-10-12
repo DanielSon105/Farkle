@@ -19,20 +19,19 @@
     self = [super initWithCoder:aDecoder];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(diceSelected:)];
     [self addGestureRecognizer:tapGesture];
-//    self.dice = [NSMutableArray new];
         //add code here
     return self;
 }
 
 -(void)roll:(id)sender{
-//        if (self.isDieHeld == NO) {//self.isDieHeld == YES when
+        if (self.isDieHeld == NO) {//self.isDieHeld == YES when
             self.text = [NSString stringWithFormat:@"%lu",(unsigned long)arc4random_uniform(6) + 1];//NSUInteger randomDiceNumber = arc4random_uniform(6) + 1;
 //            if ([self.text  isEqual: @"6"]) {
 //                self.text = @"⚅";
 //            }
-//        } else {
-            //
-//        }
+        } else {
+            
+        }
 
 }
 
@@ -41,10 +40,4 @@
 
 }
 
-//-(void)tappedLabel:(id)tappedLabel didTapDieLabel:(DieLabel *)dieLabel{
-//    NSLog(@"didTapDieLabel method called");
-//
-//    [self.delegate DieLabel:self didTapDieLabel:sender]; //called the protocol method on the delegate property
-    //When the DieLabel is tapped, call the delegate-protocol method on the DieLabel’s delegate property
-    //In your DieLabelDelegate protocol method implementation add the DieLabel instance to your dice array
 @end
